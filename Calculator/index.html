@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Calculator</h1>
+    <br>
+    <h2>Value 1</h2>
+    <input type="text" id="val1">
+    <br>
+    <br>
+    <h2>Value 2</h2>
+    <input type="text" id="val2">
+    <br>
+    <br>
+    <h2>Method</h2>
+    <select id="methodInput">
+        <option value="multiply">Multiply</option>
+        <option value="divide">Divide</option>
+        <option value="add">Add</option>
+        <option value="subtract">Subtract</option>
+    </select>
+    <br>
+    <br>
+    <button onclick="calculate()">Calculate</button>
+    <br>
+    <br>
+    <h1 class="result" id="displayResult"></h1>
+
+    <script>
+        function calculate() {
+            var val1 = parseFloat(document.getElementById("val1").value);
+            var val2 = parseFloat(document.getElementById("val2").value);
+            var method = document.getElementById("methodInput").value;
+            var result;
+
+            if (method === "multiply") {
+                result = val1 * val2;
+            } else if (method === "divide") {
+                result = val1 / val2;
+            } else if (method === "add") {
+                result = val1 + val2;
+            } else {
+                result = val1 - val2;
+            }
+
+            document.getElementById("displayResult").innerText = result;
+        }
+    </script>
+</body>
+</html>
